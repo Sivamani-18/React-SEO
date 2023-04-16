@@ -1,10 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Approute } from './routes/Approute';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import About from './pages/About';
 
-function App() {
-  return <Approute />;
-}
+interface AppProps {}
+
+export const App: React.FC<AppProps> = () => {
+  return (
+    // <Routes>
+    //   <Route path='/' element={<Home />} />
+    //   <Route path='/about' element={<About />} />
+    // </Routes>
+    <Home />
+  );
+};
 
 export default App;

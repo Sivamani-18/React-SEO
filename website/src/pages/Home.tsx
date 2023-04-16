@@ -1,10 +1,12 @@
 import React from 'react';
+import { SEO } from '../component/SEO';
 
 interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => {
   return (
     <>
+      <SEO />
       <div>
         <h1>Welcome to my website</h1>
         <p>
@@ -36,3 +38,5 @@ export const Home: React.FC<HomeProps> = () => {
     </>
   );
 };
+
+export default Home;
