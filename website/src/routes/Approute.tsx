@@ -10,6 +10,7 @@ export const Approute: React.FC<ApprouteProps> = () => {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/React-SEO' element={<Home />} />
         <Route path='/about' element={<About />} />
       </Routes>
     </BrowserRouter>
