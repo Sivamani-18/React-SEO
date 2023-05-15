@@ -26,12 +26,14 @@ export const SEO: React.FC<SEOProps> = ({
     const keywords = SEOkeywords;
     const author = SEOauthor;
     const ogTitle = SEOogTitle;
+    const ogDescription = SEOdescription;
     const ogType = 'website';
     const ogUrl = window.location.href;
     const ogImage = SEOogImage;
     const twitterCard = 'summary_large_image';
     const twitterSite = '@sivamani18';
     const twitterCreator = '@sivamani18';
+    const canonicalUrl = window.location.href;
 
     document.title = title;
 
@@ -54,6 +56,11 @@ export const SEO: React.FC<SEOProps> = ({
     metaOgTitle.setAttribute('property', 'og:title');
     metaOgTitle.setAttribute('content', ogTitle);
     document.head.appendChild(metaOgTitle);
+
+    const metaOgDescription = document.createElement('meta');
+    metaOgDescription.setAttribute('property', 'og:description');
+    metaOgDescription.setAttribute('content', ogDescription);
+    document.head.appendChild(metaOgDescription);
 
     const metaOgType = document.createElement('meta');
     metaOgType.setAttribute('property', 'og:type');
@@ -85,6 +92,11 @@ export const SEO: React.FC<SEOProps> = ({
     metaTwitterCreator.setAttribute('content', twitterCreator);
     document.head.appendChild(metaTwitterCreator);
 
+    const canonical = document.createElement('link');
+    canonical.setAttribute('rel', 'canonical');
+    canonical.setAttribute('href', canonicalUrl);
+    document.head.appendChild(canonical);
+
     // Clean up the changes when the component unmounts
     return () => {
       document.title = '';
@@ -98,6 +110,7 @@ export const SEO: React.FC<SEOProps> = ({
       document.head.removeChild(metaTwitterCard);
       document.head.removeChild(metaTwitterSite);
       document.head.removeChild(metaTwitterCreator);
+      document.head.removeChild(canonical);
     };
   }, []);
 
