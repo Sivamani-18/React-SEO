@@ -6,7 +6,7 @@ interface HomeProps {}
 export const Home: React.FC<HomeProps> = () => {
   return (
     <>
-      <SEO SEOtitle='Home Page' />
+      <SEO SEOtitle='Home Page' SEOkeywords='Custom polo t-shirts' />
       <div>
         <h1>Welcome to my website</h1>
         <p>
